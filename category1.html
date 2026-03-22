@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>专业技术学习</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px 60px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            max-width: 900px;
+            width: 100%;
+        }
+        
+        .header {
+            margin-bottom: 40px;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            padding: 8px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            transition: background 0.3s;
+        }
+        
+        .back-btn:hover {
+            background: #5568d3;
+        }
+        
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+        
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);  /* 关键修改：3列布局 */
+            gap: 30px;
+            justify-items: center;
+        }
+        
+        .icon-item {
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .icon-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 10px;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            transition: box-shadow 0.3s;
+        }
+        
+        .icon-item:hover .icon-circle {
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
+        
+        .icon-circle i {
+            font-size: 32px;
+            color: white;
+        }
+        
+        .icon-label {
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href=" " class="back-btn">
+                <i class="fas fa-arrow-left"></i> 返回主页
+            </a >
+            <h1>专业技术学习</h1>
+        </div>
+        
+        <div class="icon-grid">
+            <!-- 原有的 4 个图标 -->
+            <a href="https://doubao.com/bot/bFpZwW2T" target="_blank" class="icon-item">
+                <div class="icon-circle">
+                    <i class="fas fa-search"></i>
+                </div>
+                <span class="icon-label">智能产品开发与应用</span>
+            </a >
+            
+            <a href="https://doubao.com/bot/db3peHWw" target="_blank" class="icon-item">
+                <div class="icon-circle">
+                    <i class="fab fa-google"></i>
+                </div>
+                <span class="icon-label">物联网应用技术</span>
+            </a >
+            
+            <a href="https://doubao.com/bot/QdumXIPU" target="_blank" class="icon-item">
+                <div class="icon-circle">
+                    <i class="fab fa-microsoft"></i>
+                </div>
+                <span class="icon-label">应用电子技术</span>
+            </a >
+            
+            <a href="https://doubao.com/bot/pePcWDsU"_blank" class="icon-item">
+                <div class="icon-circle">
+                    <i class="fas fa-search-location"></i>
+                </div>
+                <span class="icon-label">大数据技术</span>
+            </a >
+            
+            <!-- 新增的 5 个图标 -->
+            <a href="https://www.so.com" target="_blank" class="icon-item">
+                <div class="icon-circle">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <span class="icon-label">人工智能技术应用</span>
+            </a >
+            
+            <a href="https://duckduckgo.com" target="_blank" class="icon-item">
+                <div class="icon-circle">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <span class="icon-label">移动应用开发</span>
+            </a >
+            
+            <a href="https://www.yandex.com" target="_blank" class="icon-item">
+                <div class="icon-circle">
+                    <i class="fas fa-globe-asia"></i>
+                </div>
+                <span class="icon-label">Linux课程的老师</span>
+            </a >
+            
+            <a href="https://doubao.com/bot/wyuT6uxv" target="_blank" class="icon-item">
+                <div class="icon-circle">
+                    <i class="fab fa-yahoo"></i>
+                </div>
+                <span class="icon-label">物联网工程项目的老师</span>
+            </a >
+            
+            <a href="https://doubao.com/bot/E48E0tVs"_blank" class="icon-item">
+                <div class="icon-circle">
+                    <i class="fas fa-tree"></i>
+                </div>
+                <span class="icon-label">学习类老师</span>
+            </a >
+        </div>
+    </div>
+</body>
+</html>

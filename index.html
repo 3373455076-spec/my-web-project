@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>答案制造机 - 学习助手</title>
+    <!-- 引入 Google Fonts Inter 字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- 引入 FontAwesome 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Microsoft YaHei", sans-serif;
+            background-color: #F8FAFC;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.98);
+            padding: 60px 80px;
+            border-radius: 24px;
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 10px -2px rgba(0, 0, 0, 0.03);
+            max-width: 900px;
+            width: 100%;
+        }
+        
+        h1 {
+            font-size: 32px;
+            color: #1E293B;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            color: #64748B;
+            margin-bottom: 50px;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+        
+        .icon-group {
+            display: flex;
+            gap: 60px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .icon-item {
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+            text-decoration: none;
+        }
+        
+        .icon-item:hover {
+            transform: translateY(-8px);
+        }
+        
+        .icon-item:active {
+            transform: scale(0.98);
+            transition: transform 0.1s ease;
+        }
+        
+        .icon-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 15px;
+            box-shadow: 0 4px 20px -2px rgba(102, 126, 234, 0.2), 0 2px 10px -2px rgba(102, 126, 234, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .icon-item:hover .icon-circle {
+            box-shadow: 0 8px 30px -2px rgba(102, 126, 234, 0.4), 0 4px 15px -2px rgba(102, 126, 234, 0.2);
+        }
+        
+        .icon-circle i {
+            font-size: 40px;
+            color: white;
+        }
+        
+        .icon-label {
+            font-size: 16px;
+            color: #334155;
+            font-weight: 600;
+        }
+        
+        .icon-description {
+            font-size: 12px;
+            color: #94A3B8;
+            margin-top: 5px;
+            font-weight: 400;
+            max-width: 120px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 30px;
+            }
+            
+            .icon-group {
+                gap: 40px;
+            }
+            
+            .icon-circle {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .icon-circle i {
+                font-size: 32px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .subtitle {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>答案制造机 - 学习助手</h1>
+        <p class="subtitle">每天只需10分钟，把碎片时间变成你的核心竞争力</p >
+        
+        <div class="icon-group">
+            <!-- 专业技术学习 -->
+            <a href="category1.html" class="icon-item">
+                <div class="icon-circle">
+                    <i class="fas fa-code"></i>
+                </div>
+                <span class="icon-label">专业技术学习</span>
+                <span class="icon-description">掌握前沿技能与工程实践</span>
+            </a >
+            
+            <!-- 职业与心理规划 -->
+            <a href="category2.html" class="icon-item">
+                <div class="icon-circle">
+                    <i class="fas fa-compass"></i>
+                </div>
+                <span class="icon-label">职业与心理规划</span>
+                <span class="icon-description">明确未来方向，保持平衡心态</span>
+            </a >
+            
+            <!-- 学科竞赛备赛 -->
+            <a href="category3.html" class="icon-item">
+                <div class="icon-circle">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <span class="icon-label">学科竞赛备赛</span>
+                <span class="icon-description">冲刺金牌，高效准备学术挑战</span>
+            </a >
+        </div>
+    </div>
+</body>
+</html>
