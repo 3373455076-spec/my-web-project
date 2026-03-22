@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>职业与心理规划</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -25,10 +25,10 @@
         .container {
             text-align: center;
             background: rgba(255, 255, 255, 0.95);
-            padding: 50px 60px;
+            padding: 50px 40px;
             border-radius: 20px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-            max-width: 800px;
+            max-width: 900px;
             width: 100%;
         }
         
@@ -58,16 +58,23 @@
         }
         
         .icon-grid {
-            display: flex;
-            justify-content: center;
-            gap: 80px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px 30px;
             justify-items: center;
+            align-items: start;
         }
         
         .icon-item {
             text-align: center;
             cursor: pointer;
             transition: transform 0.3s;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 180px;
         }
         
         .icon-item:hover {
@@ -75,16 +82,17 @@
         }
         
         .icon-circle {
-            width: 80px;
-            height: 80px;
+            width: 90px;
+            height: 90px;
             border-radius: 50%;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 0 auto 10px;
+            margin: 0 auto 12px;
             box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
             transition: box-shadow 0.3s;
+            flex-shrink: 0;
         }
         
         .icon-item:hover .icon-circle {
@@ -92,13 +100,106 @@
         }
         
         .icon-circle i {
-            font-size: 32px;
+            font-size: 38px;
             color: white;
         }
         
         .icon-label {
             font-size: 14px;
             color: #555;
+            line-height: 1.4;
+            word-break: break-word;
+            display: block;
+        }
+        
+        /* 平板设备适配 - 保持三列布局但缩小间距 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 25px;
+            }
+            
+            .icon-grid {
+                gap: 30px 20px;
+            }
+            
+            .icon-circle {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .icon-circle i {
+                font-size: 32px;
+            }
+            
+            .icon-label {
+                font-size: 13px;
+            }
+            
+            .icon-item {
+                max-width: 160px;
+            }
+        }
+        
+        /* 手机设备适配 - 保持三列布局继续缩小 */
+        @media (max-width: 550px) {
+            .container {
+                padding: 30px 15px;
+            }
+            
+            .icon-grid {
+                gap: 25px 12px;
+            }
+            
+            .icon-circle {
+                width: 70px;
+                height: 70px;
+                margin-bottom: 8px;
+            }
+            
+            .icon-circle i {
+                font-size: 28px;
+            }
+            
+            .icon-label {
+                font-size: 12px;
+            }
+            
+            h1 {
+                font-size: 20px;
+            }
+            
+            .back-btn {
+                padding: 6px 16px;
+                font-size: 12px;
+            }
+            
+            .icon-item {
+                max-width: 130px;
+            }
+        }
+        
+        /* 超小屏设备 - 仍然保持三列布局 */
+        @media (max-width: 400px) {
+            .icon-grid {
+                gap: 20px 8px;
+            }
+            
+            .icon-circle {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .icon-circle i {
+                font-size: 24px;
+            }
+            
+            .icon-label {
+                font-size: 11px;
+            }
+            
+            .icon-item {
+                max-width: 110px;
+            }
         }
     </style>
 </head>
@@ -107,30 +208,31 @@
         <div class="header">
             <a href="index.html" class="back-btn">
                 <i class="fas fa-arrow-left"></i> 返回主页
-            </a >
+            </a>
             <h1>职业与心理规划</h1>
-       图标网格布局差异处理
+        </div>
+        
         <div class="icon-grid">
             <a href="https://doubao.com/bot/RvyXgioI" target="_blank" class="icon-item">
                 <div class="icon-circle">
                     <i class="fas fa-shopping-cart"></i>
                 </div>
                 <span class="icon-label">就业规划</span>
-            </a >
+            </a>
             
             <a href="https://doubao.com/bot/uG3DIv4t" target="_blank" class="icon-item">
                 <div class="icon-circle">
                     <i class="fas fa-dog"></i>
                 </div>
                 <span class="icon-label">职业规划大赛</span>
-            </a >
+            </a>
             
             <a href="https://doubao.com/bot/sPVrV3VI" target="_blank" class="icon-item">
                 <div class="icon-circle">
                     <i class="fas fa-users"></i>
                 </div>
                 <span class="icon-label">心理咨询</span>
-            </a >
+            </a>
         </div>
     </div>
 </body>
