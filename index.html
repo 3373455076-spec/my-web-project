@@ -1,177 +1,162 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>答案制造机 - 学习助手</title>
-    <!-- 引入 Google Fonts Inter 字体 -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- 引入 FontAwesome 图标库 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Microsoft YaHei", sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        
-        .container {
-            text-align: center;
-            background: rgba(255, 255, 255, 0.98);
-            padding: 60px 80px;
-            border-radius: 24px;
-            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 10px -2px rgba(0, 0, 0, 0.03);
-            max-width: 900px;
-            width: 100%;
-        }
-        
-        h1 {
-            font-size: 32px;
-            color: #1E293B;
-            margin-bottom: 15px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-        
-        .subtitle {
-            font-size: 16px;
-            color: #64748B;
-            margin-bottom: 50px;
-            line-height: 1.6;
-            font-weight: 400;
-        }
-        
-        .icon-group {
-            display: flex;
-            gap: 60px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .icon-item {
-            text-align: center;
-            cursor: pointer;
-            transition: transform 0.3s;
-            text-decoration: none;
-        }
-        
-        .icon-item:hover {
-            transform: translateY(-8px);
-        }
-        
-        .icon-item:active {
-            transform: scale(0.98);
-            transition: transform 0.1s ease;
-        }
-        
-        .icon-circle {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto 15px;
-            box-shadow: 0 4px 20px -2px rgba(102, 126, 234, 0.2), 0 2px 10px -2px rgba(102, 126, 234, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .icon-item:hover .icon-circle {
-            box-shadow: 0 8px 30px -2px rgba(102, 126, 234, 0.4), 0 4px 15px -2px rgba(102, 126, 234, 0.2);
-        }
-        
-        .icon-circle i {
-            font-size: 40px;
-            color: white;
-        }
-        
-        .icon-label {
-            font-size: 16px;
-            color: #334155;
-            font-weight: 600;
-        }
-        
-        .icon-description {
-            font-size: 12px;
-            color: #94A3B8;
-            margin-top: 5px;
-            font-weight: 400;
-            max-width: 120px;
-        }
-        
-        /* 响应式设计 */
-        @media (max-width: 768px) {
-            .container {
-                padding: 40px 30px;
-            }
-            
-            .icon-group {
-                gap: 40px;
-            }
-            
-            .icon-circle {
-                width: 80px;
-                height: 80px;
-            }
-            
-            .icon-circle i {
-                font-size: 32px;
-            }
-            
-            h1 {
-                font-size: 24px;
-            }
-            
-            .subtitle {
-                font-size: 14px;
-            }
-        }
-    </style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ethereal AI - Student Assistant | 答案制造机</title>
+<!-- Tailwind CSS CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style data-purpose="typography">
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: #F8FAFC;
+    }
+  </style>
+<style data-purpose="custom-shadows">
+    .soft-shadow {
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 10px -2px rgba(0, 0, 0, 0.03);
+    }
+    .card-hover:active {
+      transform: scale(0.98);
+      transition: transform 0.1s ease;
+    }
+  </style>
 </head>
-<body>
-    <div class="container">
-        <h1>答案制造机 - 学习助手</h1>
-        <p class="subtitle">每天只需10分钟，把碎片时间变成你的核心竞争力</p >
-        
-        <div class="icon-group">
-            <!-- 专业技术学习 -->
-            <a href="category1.html" class="icon-item">
-                <div class="icon-circle">
-                    <i class="fas fa-code"></i>
-                </div>
-                <span class="icon-label">专业技术学习</span>
-                <span class="icon-description">掌握前沿技能与工程实践</span>
-            </a >
-            
-            <!-- 职业与心理规划 -->
-            <a href="category2.html" class="icon-item">
-                <div class="icon-circle">
-                    <i class="fas fa-compass"></i>
-                </div>
-                <span class="icon-label">职业与心理规划</span>
-                <span class="icon-description">明确未来方向，保持平衡心态</span>
-            </a >
-            
-            <!-- 学科竞赛备赛 -->
-            <a href="category3.html" class="icon-item">
-                <div class="icon-circle">
-                    <i class="fas fa-trophy"></i>
-                </div>
-                <span class="icon-label">学科竞赛备赛</span>
-                <span class="icon-description">冲刺金牌，高效准备学术挑战</span>
-            </a >
-        </div>
-    </div>
+<body class="flex flex-col min-h-screen">
+<!-- BEGIN: MainHeader -->
+<header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 px-6 py-4 flex items-center justify-between" data-purpose="navigation-header">
+<div class="flex items-center space-x-2" data-purpose="logo-container">
+<!-- Ethereal AI Logo Placeholder -->
+<div class="w-8 h-8 bg-indigo-500 rounded-lg flex items-center justify-center text-white">
+<svg class="h-5 w-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"></path>
+</svg>
+</div>
+<span class="text-xl font-bold text-indigo-700 tracking-tight">答案制造机</span>
+</div>
+<!-- User Avatar -->
+<div class="w-10 h-10 rounded-full bg-orange-100 border-2 border-orange-200 overflow-hidden" data-purpose="user-profile">
+< img alt="User Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxxZYOdT6GxbXSXzlTPGZjziXpaTLHMoAXdfIfpbOZwv0NpR-AwG4rjkDMWU2dCCfYDO-r-8gGsb3fE79sPhaCEJ1RZN7WkxgcBWBr2zBMz7IcPoz0HeSRW05CpwUZErb0_7QVig6mr_EejCUS-PepO0ImQzjNw0eMBfoR8_EXKCFnU3d6y_7Ml0N_nidutpEslZL4QBnx-BZbwDSBbnnkdHl5tysfK6xT1sxkjaqORvJQhpGyKJTAdJ7HcMJgav6ZjSJlL4owbnI"/>
+</div>
+</header>
+<!-- END: MainHeader -->
+
+<main class="flex-grow px-6 pt-8 pb-8" data-purpose="main-content">
+<!-- BEGIN: HeroSection -->
+<section class="mb-10" data-purpose="hero-text">
+<h2 class="text-indigo-600 font-bold text-sm tracking-widest mb-2 uppercase">AI Student Assistant</h2>
+<h1 class="text-3xl font-bold leading-tight text-indigo-600">每天只需10分钟，<br/>把碎片时间变成你的核心竞争力</h1>
+</section>
+<!-- END: HeroSection -->
+
+<!-- BEGIN: ActionButtonsSection -->
+<section class="space-y-4" data-purpose="primary-actions">
+<!-- Action Card 1: 专业技术学习 -->
+<button class="w-full bg-white p-6 rounded-3xl soft-shadow flex items-center justify-between card-hover text-left border border-slate-50">
+<div class="flex items-center space-x-4">
+<div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center">
+<svg class="h-8 w-8 text-blue-500" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div>
+<h3 class="text-lg font-bold text-slate-800">专业技术学习</h3>
+<p class="text-sm text-slate-500">掌握前沿技能与工程实践</p >
+</div>
+</div>
+<svg class="h-6 w-6 text-slate-300" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+
+<!-- Action Card 2: 职业与心理规划 -->
+<button class="w-full bg-white p-6 rounded-3xl soft-shadow flex items-center justify-between card-hover text-left border border-slate-50">
+<div class="flex items-center space-x-4">
+<div class="w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center">
+<svg class="h-8 w-8 text-purple-500" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div>
+<h3 class="text-lg font-bold text-slate-800">职业与心理规划</h3>
+<p class="text-sm text-slate-500">明确未来方向，保持平衡心态</p >
+</div>
+</div>
+<svg class="h-6 w-6 text-slate-300" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+
+<!-- Action Card 3: 学科竞赛备赛 -->
+<button class="w-full bg-white p-6 rounded-3xl soft-shadow flex items-center justify-between card-hover text-left border border-slate-50">
+<div class="flex items-center space-x-4">
+<div class="w-14 h-14 bg-orange-50 rounded-2xl flex items-center justify-center">
+<svg class="h-8 w-8 text-orange-500" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div>
+<h3 class="text-lg font-bold text-slate-800">学科竞赛备赛</h3>
+<p class="text-sm text-slate-500">冲刺金牌，高效准备学术挑战</p >
+</div>
+</div>
+<svg class="h-6 w-6 text-slate-300" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</section>
+<!-- END: ActionButtonsSection -->
+
+<p class="mt-10 text-center text-3xl font-bold text-indigo-600">你好，准备好开始学习了吗？</p >
+</main>
+
+<!-- 添加页面跳转功能：为三个功能按钮绑定点击事件，分别跳转到对应的三个不同页面 -->
+<script>
+  (function() {
+    // 确保DOM完全加载后再绑定事件（脚本在底部，元素已存在，但防御性处理）
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initNavigation);
+    } else {
+      initNavigation();
+    }
+
+    function initNavigation() {
+      // 获取所有功能按钮（位于 .space-y-4 容器内的三个 button）
+      const actionButtons = document.querySelectorAll('.space-y-4 button');
+      
+      // 如果找不到按钮则返回
+      if (!actionButtons.length) return;
+
+      // 定义跳转链接 (用户可根据实际项目修改这些URL)
+      // 第一个页面: 专业技术学习  ->  tech-learning.html
+      // 第二个页面: 职业与心理规划 -> career-planning.html
+      // 第三个页面: 学科竞赛备赛 -> competition-prep.html
+      const targetUrls = [
+        './tech-learning.html',      // 第一个按钮: 专业技术学习页面
+        './career-planning.html',    // 第二个按钮: 职业与心理规划页面
+        './competition-prep.html'    // 第三个按钮: 学科竞赛备赛页面
+      ];
+      
+      // 为每个按钮绑定点击事件 (根据索引跳转到对应页面)
+      actionButtons.forEach((btn, index) => {
+        // 只处理前三个按钮，避免多余按钮被误绑 (目前正好三个)
+        if (index < targetUrls.length) {
+          btn.addEventListener('click', function(event) {
+            // 阻止可能存在的任何默认行为（按钮无默认行为，但保留良好习惯）
+            event.preventDefault();
+            // 执行页面跳转
+            window.location.href = targetUrls[index];
+          });
+        }
+      });
+      
+      // 可选: 控制台输出提示，表明跳转功能已启用（不影响任何原有样式及结构）
+      console.log('✅ 页面跳转功能已激活 | 点击卡片将跳转至对应学习页面');
+    }
+  })();
+</script>
+
+<!-- 以下保留原始结构，未作任何其他修改，仅添加了跳转脚本 -->
 </body>
 </html>
