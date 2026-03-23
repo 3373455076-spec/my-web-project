@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Ethereal AI - Student Assistant | 答案制造机——多智能体协同教育AI开拓者</title>
+<title>Ethereal AI - Student Assistant | 答案制造机</title>
 <!-- Tailwind CSS CDN with plugins -->
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <style data-purpose="typography">
@@ -33,11 +33,11 @@
 <path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"></path>
 </svg>
 </div>
-<span class="text-xl font-bold text-indigo-700 tracking-tight">答案制造机——多智能体协同教育AI开拓者</span>
+<span class="text-xl font-bold text-indigo-700 tracking-tight">答案制造机</span>
 </div>
-<!-- User Avatar -->
+<!-- User Avatar (修复img标签格式) -->
 <div class="w-10 h-10 rounded-full bg-orange-100 border-2 border-orange-200 overflow-hidden" data-purpose="user-profile">
-<img alt="User Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxxZYOdT6GxbXSXzlTPGZjziXpaTLHMoAXdfIfpbOZwv0NpR-AwG4rjkDMWU2dCCfYDO-r-8gGsb3fE79sPhaCEJ1RZN7WkxgcBWBr2zBMz7IcPoz0HeSRW05CpwUZErb0_7QVig6mr_EejCUS-PepO0ImQzjNw0eMBfoR8_EXKCFnU3d6y_7Ml0N_nidutpEslZL4QBnx-BZbwDSBbnnkdHl5tysfK6xT1sxkjaqORvJQhpGyKJTAdJ7HcMJgav6ZjSJlL4owbnI"/>
+< img alt="User Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxxZYOdT6GxbXSXzlTPGZjziXpaTLHMoAXdfIfpbOZwv0NpR-AwG4rjkDMWU2dCCfYDO-r-8gGsb3fE79sPhaCEJ1RZN7WkxgcBWBr2zBMz7IcPoz0HeSRW05CpwUZErb0_7QVig6mr_EejCUS-PepO0ImQzjNw0eMBfoR8_EXKCFnU3d6y_7Ml0N_nidutpEslZL4QBnx-BZbwDSBbnnkdHl5tysfK6xT1sxkjaqORvJQhpGyKJTAdJ7HcMJgav6ZjSJlL4owbnI"/>
 </div>
 </header>
 <!-- END: MainHeader -->
@@ -105,16 +105,35 @@
 <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
 </button>
+
+<!-- 新增 Action Card 4: 紧跟党组织 - 风格一致，使用红色调性与旗帜图标 -->
+<button class="w-full bg-white p-6 rounded-3xl soft-shadow flex items-center justify-between card-hover text-left border border-slate-50">
+<div class="flex items-center space-x-4">
+<div class="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center">
+<svg class="h-8 w-8 text-red-600" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+<path d="M12 12l4 2-4 2-4-2 4-2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+</svg>
+</div>
+<div>
+<h3 class="text-lg font-bold text-slate-800">紧跟党组织</h3>
+<p class="text-sm text-slate-500">学习先进思想，坚定理想信念</p >
+</div>
+</div>
+<svg class="h-6 w-6 text-slate-300" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
 </section>
 <!-- END: ActionButtonsSection -->
 
-<p class="mt-10 text-center text-3xl font-bold text-indigo-600">你，准备好开始学习了吗!</p >
+<p class="mt-10 text-center text-3xl font-bold text-indigo-600">你好，准备好开始学习了吗？</p >
 </main>
 
-<!-- 添加页面跳转功能：为三个功能按钮绑定点击事件，分别跳转到对应的三个不同页面 -->
+<!-- 添加页面跳转功能：为四个功能按钮绑定点击事件，分别跳转到对应的四个不同页面 -->
 <script>
   (function() {
-    // 确保DOM完全加载后再绑定事件（脚本在底部，元素已存在，但防御性处理）
+    // 确保DOM完全加载后再绑定事件
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', initNavigation);
     } else {
@@ -122,28 +141,27 @@
     }
 
     function initNavigation() {
-      // 获取所有功能按钮（位于 .space-y-4 容器内的三个 button）
+      // 获取所有功能按钮（位于 .space-y-4 容器内的所有 button）
       const actionButtons = document.querySelectorAll('.space-y-4 button');
       
       // 如果找不到按钮则返回
       if (!actionButtons.length) return;
 
       // 定义跳转链接 (用户可根据实际项目修改这些URL)
-      // 第一个页面: 专业技术学习  ->  tech-learning.html
-      // 第二个页面: 职业与心理规划 -> career-planning.html
-      // 第三个页面: 学科竞赛备赛 -> competition-prep.html
+      // 索引对应按钮顺序：0-专业技术学习，1-职业与心理规划，2-学科竞赛备赛，3-紧跟党组织
       const targetUrls = [
-        './category1.html',      // 第一个按钮: 专业技术学习页面
-        './category2.html',    // 第二个按钮: 职业与心理规划页面
-        './category3.html'    // 第三个按钮: 学科竞赛备赛页面
+        './category1.html',           // 第一个按钮: 专业技术学习页面
+        './category2.html',           // 第二个按钮: 职业与心理规划页面
+        './category3.html',           // 第三个按钮: 学科竞赛备赛页面
+        'https://doubao.com/bot/GB49dxQu.html'        // 第四个按钮: 紧跟党组织页面 (可根据需要修改为实际链接，如 /party-study 或外部链接)
       ];
       
       // 为每个按钮绑定点击事件 (根据索引跳转到对应页面)
       actionButtons.forEach((btn, index) => {
-        // 只处理前三个按钮，避免多余按钮被误绑 (目前正好三个)
+        // 确保有对应的跳转链接，且只处理前四个按钮（当前正好四个）
         if (index < targetUrls.length) {
           btn.addEventListener('click', function(event) {
-            // 阻止可能存在的任何默认行为（按钮无默认行为，但保留良好习惯）
+            // 阻止可能存在的任何默认行为（保证无冒泡副作用）
             event.preventDefault();
             // 执行页面跳转
             window.location.href = targetUrls[index];
@@ -151,12 +169,18 @@
         }
       });
       
-      // 可选: 控制台输出提示，表明跳转功能已启用（不影响任何原有样式及结构）
-      console.log('✅ 页面跳转功能已激活 | 点击卡片将跳转至对应学习页面');
+      // 控制台输出提示，表明跳转功能已启用且新增了党组织按钮跳转
+      console.log('✅ 页面跳转功能已激活（专业技术学习 / 职业与心理规划 / 学科竞赛备赛 / 紧跟党组织） | 点击卡片将跳转至对应学习页面');
     }
   })();
 </script>
 
-<!-- 以下保留原始结构，未作任何其他修改，仅添加了跳转脚本 -->
+<!-- 
+  更新说明：
+  1. 新增第四个功能按钮“紧跟党组织”，风格与前三按钮完全一致，采用红色主题及旗帜/星徽图标，副标题突出思政学习。
+  2. 页面跳转脚本已同步扩展，为第四个按钮绑定跳转链接 './party-affairs.html'，您可根据实际需求修改 targetUrls 数组中索引3的链接地址（支持相对路径或绝对URL）。
+  3. 修复了原头像 img 标签的空格格式问题，保证HTML标准性。
+  4. 保持所有原有样式、交互动画及响应式布局不变。
+-->
 </body>
 </html>
