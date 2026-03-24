@@ -46,6 +46,7 @@
 </section>
 
 <section class="space-y-4">
+<!-- 专业技术学习 -->
 <div class="w-full bg-white p-6 rounded-3xl soft-shadow flex items-center justify-between card-hover text-left border border-slate-50 action-card" data-url="./category1.html">
 <div class="flex items-center space-x-4">
 <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center">
@@ -63,6 +64,7 @@
 </svg>
 </div>
 
+<!-- 职业与心理规划 -->
 <div class="w-full bg-white p-6 rounded-3xl soft-shadow flex items-center justify-between card-hover text-left border border-slate-50 action-card" data-url="./category2.html">
 <div class="flex items-center space-x-4">
 <div class="w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center">
@@ -80,6 +82,7 @@
 </svg>
 </div>
 
+<!-- 学科竞赛备赛 -->
 <div class="w-full bg-white p-6 rounded-3xl soft-shadow flex items-center justify-between card-hover text-left border border-slate-50 action-card" data-url="./category3.html">
 <div class="flex items-center space-x-4">
 <div class="w-14 h-14 bg-orange-50 rounded-2xl flex items-center justify-center">
@@ -97,6 +100,7 @@
 </svg>
 </div>
 
+<!-- 紧跟党组织 -->
 <div class="w-full bg-white p-6 rounded-3xl soft-shadow flex items-center justify-between card-hover text-left border border-slate-50 action-card" data-url="https://doubao.com/bot/GB49dxQu">
 <div class="flex items-center space-x-4">
 <div class="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center">
@@ -114,6 +118,25 @@
 <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
 </div>
+
+<!-- 打破信息差（链接已改为 category4.html） -->
+<div class="w-full bg-white p-6 rounded-3xl soft-shadow flex items-center justify-between card-hover text-left border border-slate-50 action-card" data-url="./category4.html">
+<div class="flex items-center space-x-4">
+<div class="w-14 h-14 bg-teal-50 rounded-2xl flex items-center justify-center">
+<svg class="h-8 w-8 text-teal-600" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+<path d="M12 8v4l2 2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+</svg>
+</div>
+<div>
+<h3 class="text-lg font-bold text-slate-800">打破信息差</h3>
+<p class="text-sm text-slate-500">获取前沿资讯，拓宽认知边界</p >
+</div>
+</div>
+<svg class="h-6 w-6 text-slate-300" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
 </section>
 
 <p class="mt-10 text-center text-3xl font-bold text-indigo-600">你好，准备好开始学习了吗？</p >
@@ -125,7 +148,10 @@
     cards.forEach(card => {
       card.addEventListener('click', function(e) {
         const url = card.getAttribute('data-url');
-        if (!url) return;
+        if (!url || url === '#') {
+          alert('请先配置该按钮的跳转链接（修改 data-url 属性）');
+          return;
+        }
         if (url.startsWith('http')) {
           window.open(url, '_blank');
         } else {
