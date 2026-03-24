@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>打破信息查</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            max-width: 900px;
+            width: 100%;
+            backdrop-filter: blur(0px);
+            transition: all 0.3s ease;
+        }
+        
+        .header {
+            margin-bottom: 40px;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            padding: 8px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            transition: background 0.3s, transform 0.2s;
+            font-weight: 500;
+        }
+        
+        .back-btn:hover {
+            background: #5568d3;
+            transform: translateY(-1px);
+        }
+        
+        h1 {
+            font-size: 28px;
+            color: #1f2937;
+            letter-spacing: -0.3px;
+            font-weight: 600;
+        }
+        
+        /* 增强描述感 */
+        .sub {
+            color: #6c757d;
+            margin-top: 8px;
+            font-size: 14px;
+        }
+        
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px 50px;
+            justify-items: center;
+            align-items: start;
+            margin-top: 20px;
+        }
+        
+        .icon-item {
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.2s;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 210px;
+        }
+        
+        .icon-item:hover {
+            transform: translateY(-6px);
+        }
+        
+        .icon-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 16px;
+            box-shadow: 0 12px 22px rgba(102, 126, 234, 0.35);
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+        
+        .icon-item:hover .icon-circle {
+            box-shadow: 0 18px 30px rgba(102, 126, 234, 0.55);
+            background: linear-gradient(145deg, #5a6fd8, #6a3f8f);
+        }
+        
+        .icon-circle i {
+            font-size: 46px;
+            color: white;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+        
+        .icon-label {
+            font-size: 16px;
+            font-weight: 500;
+            color: #2c3e4f;
+            line-height: 1.4;
+            word-break: break-word;
+            display: block;
+            background: rgba(255,255,240,0.5);
+            padding: 4px 8px;
+            border-radius: 40px;
+            transition: background 0.2s;
+        }
+        
+        .icon-item:hover .icon-label {
+            background: rgba(102, 126, 234, 0.1);
+            color: #1e2f3a;
+        }
+        
+        /* 平板设备适配 */
+        @media (max-width: 640px) {
+            .container {
+                padding: 40px 28px;
+            }
+            
+            .icon-grid {
+                gap: 35px 30px;
+            }
+            
+            .icon-circle {
+                width: 88px;
+                height: 88px;
+            }
+            
+            .icon-circle i {
+                font-size: 40px;
+            }
+            
+            .icon-label {
+                font-size: 15px;
+            }
+            
+            .icon-item {
+                max-width: 170px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+        }
+        
+        /* 手机设备适配 - 改为单列 增强点击区域 */
+        @media (max-width: 480px) {
+            .container {
+                padding: 32px 20px;
+            }
+            
+            .icon-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .icon-circle {
+                width: 110px;
+                height: 110px;
+            }
+            
+            .icon-circle i {
+                font-size: 52px;
+            }
+            
+            .icon-label {
+                font-size: 18px;
+                font-weight: 500;
+                padding: 6px 12px;
+            }
+            
+            h1 {
+                font-size: 22px;
+            }
+            
+            .back-btn {
+                padding: 6px 18px;
+                font-size: 13px;
+            }
+            
+            .icon-item {
+                max-width: 240px;
+            }
+        }
+        
+        /* 小折叠屏优化 */
+        @media (max-width: 360px) {
+            .icon-label {
+                font-size: 16px;
+            }
+            .icon-circle {
+                width: 95px;
+                height: 95px;
+            }
+            .icon-circle i {
+                font-size: 44px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> 返回主页
+            </a >
+            <h1>📚 打破信息差</h1>
+            <div class="sub">智能助手 · 精准助力</div>
+        </div>
+        
+        <div class="icon-grid">
+            <!-- 国家经济政策助手按钮：更换为经济图表图标，链接暂留空，用户稍后填入实际URL -->
+            <a href="https://doubao.com/bot/QSX7ftyY" target="_blank" class="icon-item" id="economicPolicyLink">
+                <div class="icon-circle">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <span class="icon-label">🏛️ 国家经济政策助手</span>
+            </a >
+            
+            <!-- 律枢明鉴按钮：更换为法槌/法律公正图标，链接暂留空，待用户填入真实地址 -->
+            <a href="https://doubao.com/bot/Hv95CxVX" target="_blank" class="icon-item" id="legalWisdomLink">
+                <div class="icon-circle">
+                    <i class="fas fa-gavel"></i>
+                </div>
+                <span class="icon-label">⚖️ 律枢明鉴</span>
+            </a >
+        </div>
+    </div>
+    <!-- 注：URL 已清空为占位符 "#"，方便用户后续填入真实链接（如 https://...） -->
+</body>
+</html>
